@@ -1,13 +1,14 @@
 class Api::SessionsController < ApplicationController
   def create
+    # debugger
     @account = Account.find_by_credentials(
-      params[:account][:account_email],
-      params[:account][:password]
+      params[:session][:account_email],
+      params[:session][:password]
     )
 
     if @account
       login(@account)
-      render "/api/video/"
+      render json: {id: @account.id, email: @account.account_email}
     else
       render json: ["Invalid email/password"], status: 401
     end
@@ -17,7 +18,7 @@ class Api::SessionsController < ApplicationController
     @account = current_account
     if @account
       logout
-      render "/"
+      render json: ['Logout sucessful']
     else
       render json: ["Nobody signed in"], status: 404
     end

@@ -13,3 +13,179 @@
  *= require_tree .
  *= require_self
  */
+
+
+body {
+    margin: 0;
+    height: 1000px;
+}
+
+body>div{
+    height: 1000px;
+}
+main{
+    height: 1000px;
+}
+.signup input {
+    display: block;
+    width: 100%;
+    height: 60px;
+    border: 1px, solid rgb(140, 140, 140);
+}
+ 
+.signup div{
+    width: 445px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.signup span{
+    text-align: right;
+    display: block;
+    padding-right: 10px;
+    padding-top: 22px;
+    padding-bottom: 29px;
+    margin-bottom: 23px;
+    border-bottom: rgb(230, 230, 230) 1px solid;
+   
+}
+.signup span a{
+    text-decoration: none;
+    color: rgb(51, 51, 51);
+}
+
+.signup span a:hover{
+    text-decoration: underline;
+}
+
+.signup .freebanner {
+    background: #0071eb;;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 16px;
+    margin: 0;
+}
+
+.signup button{
+    background-color: rgb(229, 9, 20);
+    border: white;
+    color: white;
+    width: 101%;
+    margin: 0;
+    padding: 13px;
+    margin-top: 10px;
+
+}
+
+.signup h2{
+    color: rgb(51, 51, 51);
+}
+.signup h3{
+    color: rgb(51, 51, 51);
+}
+
+
+
+
+.signin{
+    background: black;
+    height: 1000px;
+    padding-top: 107px;
+}
+
+.signin div{
+    width: 550px;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* .signin{
+} */
+
+.signin h2{
+    color: white;
+    margin: 0;
+    font-size: 32px;
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.signin button{
+    background-color: rgb(229, 9, 20);
+    border: white;
+    color: white;
+    width: 101%;
+    margin: 0;
+    padding: 15px;
+    margin-top: 48px;
+    border: rgb(229, 9, 20) solid 1px;
+    border-radius: 3px;
+}
+.signin input {
+    display: block;
+    width: 100%;
+    height: 45px;
+    border:none;
+    background: #333;
+    color:white;
+}
+.signin p {
+    display: block;
+    color: rgb(179, 179, 179);
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.signin a{
+    color: rgb(179, 179, 179);
+    text-decoration: none;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+.signin p{
+    margin: 0;
+}
+
+.signin .toneedhelp{
+    text-align: right;
+    padding-top: 10px;
+}
+
+.signin .tofacebook a{
+    font-size: 13px;
+    color: #737373;
+}
+
+.signin .tofacebook{
+    font-size: 13px;
+    padding-top: 53px;
+    padding-bottom: 30px;
+}
+.signin .tosignup{
+    font-size: 16px;
+    color: #737373;
+    padding-bottom: 10px;
+}
+
+.signin .recaptcha{
+    color: #737373;
+    font-size: 12px;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.signin ul {
+    background: rgb(232, 124, 3);
+    list-style-type: none;
+    border-radius: 5px;
+}
+
+.signin li {
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+

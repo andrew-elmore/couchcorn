@@ -1,10 +1,11 @@
 class Api::AccountsController < ApplicationController
   def create
-    @account = account.new(account_params)
+    # debugger
+    @account = Account.new(account_params)
 
-    if @account.save
+    if @account.save! 
       login(@account)
-      render "/"
+      render json: {id: @account.id, email: @account.account_email}
     else
       render json: @account.errors.full_messages, status: 422
     end
