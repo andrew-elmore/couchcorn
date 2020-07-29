@@ -8,7 +8,6 @@ class Api::AccountsController < ApplicationController
       render json: {id: @account.id, email: @account.account_email}
     else
 
-      # render json: ["Account cannot be created"], status: 422
       render json: @account.errors.full_messages, status: 422
     end
   end
