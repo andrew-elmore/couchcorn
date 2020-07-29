@@ -18,23 +18,26 @@ const logoutCurrentAccount = () => ({
 export const createNewAccount = formAccount => dispatch => 
     postAccount(formAccount)
     .then(account => dispatch(receiveCurrentAccount(account)
-    ), errors => (
-            dispatch(receiveErrors(errors.responseJSON))
-    ));
+    ), errors => {
+        debugger
+        return dispatch(receiveErrors(errors.responseJSON))
+    });
 
 export const login = formAccount => dispatch => 
     postSession(formAccount)
     .then(account => dispatch(receiveCurrentAccount(account)
-    ), errors => (
-            dispatch(receiveErrors(errors.responseJSON))
-    ));
+    ), errors => {
+        return dispatch(receiveErrors(errors.responseJSON))
+    });
 
 export const logout = () => dispatch => 
     deleteSession()
     .then(() => dispatch(logoutCurrentAccount()));
 
 
-export const receiveErrors = errors => ({
+export const receiveErrors = (errors) => {
+    debugger
+    return ({
     type: RECEIVE_SESSION_ERRORS,
     errors
-});
+})};

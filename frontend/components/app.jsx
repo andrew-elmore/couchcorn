@@ -9,6 +9,6 @@ export default () => (
     <ProtectedRoute exact path='/' component={VideosContainer} />
     <AuthRoute path="/signup" component={SignupContainerOne} />
     <AuthRoute path="/login" component={LoginContainer} />
-    <ProtectedRoute path='/videos' component={VideosContainer} />
+   
   </div>
 );
