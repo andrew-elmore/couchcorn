@@ -19,7 +19,7 @@ export const createNewAccount = formAccount => dispatch =>
     postAccount(formAccount)
     .then(account => dispatch(receiveCurrentAccount(account)
     ), errors => {
-        debugger
+
         return dispatch(receiveErrors(errors.responseJSON))
     });
 
@@ -36,7 +36,7 @@ export const logout = () => dispatch =>
 
 
 export const receiveErrors = (errors) => {
-    debugger
+
     return ({
     type: RECEIVE_SESSION_ERRORS,
     errors
