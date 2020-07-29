@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect, Route, withRouter } from 'react-router-dom';
 
 const mstp = state => {
-    
+    debugger
     return ({
     loggedIn: Boolean(state.session.currentAccount),
 })};
@@ -20,6 +20,7 @@ const Auth = ({ component: Component, path, loggedIn }) => {
 )};
 
 const Protected = ({ component: Component, path, loggedIn }) => {
+    debugger
     return (
     <Route
         path={path}

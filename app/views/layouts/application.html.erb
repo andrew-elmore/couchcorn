@@ -7,6 +7,16 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <% if current_account %>
+        <script>
+        window.currentAccount = { 
+          "id": <%= current_account.id %>,
+          "account_email": "<%= current_account.account_email %>"
+          };
+      </script>
+    <% end %>
+
+
   </head>
 
   <body>
