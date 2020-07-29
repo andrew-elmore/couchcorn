@@ -1,6 +1,5 @@
 class Api::AccountsController < ApplicationController
   def create
-    # debugger
     @account = Account.new(account_params)
 
     if @account.save! 

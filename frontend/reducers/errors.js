@@ -1,7 +1,7 @@
 import { RECEIVE_SESSION_ERRORS, RECEIVE_CURRENT_ACCOUNT, } from '../actions/session';
 
 export default (state = [], action) => {
-    debugger
+    
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_SESSION_ERRORS:

@@ -27,7 +27,7 @@ class Login extends React.Component {
             .then(() => this.props.history.push('/videos'));
     }
     renderErrors() {
-        debugger
+        
         return (
             <ul>
                 {this.props.errors.map((error, i) => (

@@ -10,7 +10,7 @@ class Videos extends React.Component {
         this.handleLogout = this.handleLogout.bind(this);
     }
     handleLogout() {
-        debugger
+        
         this.props.logout()
             .then(() => this.props.history.push('/login'));
     }

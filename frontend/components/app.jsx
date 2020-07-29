@@ -6,6 +6,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 export default () => (
   <div>
+    <ProtectedRoute exact path='/' component={VideosContainer} />
     <AuthRoute path="/signup" component={SignupContainerOne} />
     <AuthRoute path="/login" component={LoginContainer} />
     <ProtectedRoute path='/videos' component={VideosContainer} />

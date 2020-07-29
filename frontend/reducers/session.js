@@ -10,7 +10,7 @@ export default (state = _nullSession, action) => {
         case RECEIVE_CURRENT_ACCOUNT:
             const currentAccount = action.account
             return Object.assign({}, {currentAccount});
-            debugger;
+            ;
         case LOGOUT_CURRENT_ACCOUNT:
             return _nullSession;
         default:
