@@ -5,7 +5,7 @@ import configureStore from './store/store'
 
 document.addEventListener("DOMContentLoaded", () => {
     let store = {}
-    debugger;
+    ;
     if (window.currentAccount) {
         const preloadedState = {
             session: { currentAccount: window.currentAccount},
