@@ -8,7 +8,7 @@ class Video extends React.Component {
 
     
     componentDidMount() {
-        debugger
+        
         this.props.fetchVideo(this.props.match.params.videoId)
     }
 
@@ -28,7 +28,7 @@ class Video extends React.Component {
 
 
 const mstp = (state, ownProps) => {
-    debugger
+    
     return ({
     video: state.videos[ownProps.match.params.videoId]
 })};

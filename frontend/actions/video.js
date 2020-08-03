@@ -10,7 +10,7 @@ const receiveVideo = video => ({
 
 
 export const fetchVideo = videoId => dispatch => {
-    debugger
+    
     return(
     utilVideo.fetchVideo(videoId)
         .then(video => dispatch(receiveVideo(video))))}

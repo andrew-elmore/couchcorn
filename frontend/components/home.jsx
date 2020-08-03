@@ -27,12 +27,12 @@ class Home extends React.Component {
 
     componentDidMount(){
         this.fetchVideos()
-        // debugger
+        
     }
 
 
     render () {
-        // debugger
+        
         return (
             <div className="topbar">
                 <div className="home">
