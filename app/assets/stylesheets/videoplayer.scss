@@ -1,0 +1,27 @@
+.videoplayer {
+    height: 761px;
+    width: 100%;
+    position: relative;
+    background-color: black;
+}
+
+.videoplayer h1{
+    position: absolute;
+    margin: 0;
+    color: white;
+    z-index:4;
+    margin-left: 43.5625px;
+    margin-right: 43.5625px;
+    background-color: black;
+    width: 1352.880px;
+    opacity: 0.5;
+}
+
+.videoplayer video{
+    position: absolute;
+    top: 0px;
+    height: 761px;
+    padding-left: 43.5625px;
+    padding-right: 43.5625px;
+    z-index:3;
+}
