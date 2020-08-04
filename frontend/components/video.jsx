@@ -28,7 +28,6 @@ class Video extends React.Component {
 
 
 const mstp = (state, ownProps) => {
-    
     return ({
     video: state.videos[ownProps.match.params.videoId]
 })};
