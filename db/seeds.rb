@@ -15,5 +15,5 @@ user1 = Account.create(account_email: "name@website.com", password: 'password')
 
 
 video1 = Video.create(title: 'Iceland | Land of Fire and Ice', description: 'Created by Travel Pockets')
-file1 = open('https://couchcorn-pro.s3.amazonaws.com/travelpockets_iceland_land_of_fire_and_ice_thumbnail.png')
-video1.film.attach(io: file1, filename: 'travelpockets_iceland_land_of_fire_and_ice_thumbnail.png')
+file1 = open('https://couchcorn-pro.s3.amazonaws.com/travelpockets_iceland_land_of_fire_and_ice.mp4')
+video1.film.attach(io: file1, filename: 'travelpockets_iceland_land_of_fire_and_ice.mp4')
