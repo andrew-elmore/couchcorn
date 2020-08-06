@@ -4,8 +4,7 @@ import Root from './components/root';
 import configureStore from './store/store'
 
 document.addEventListener("DOMContentLoaded", () => {
-    let store = {}
-    ;
+    let store = {};
     if (window.currentAccount) {
         const preloadedState = {
             session: { currentAccount: window.currentAccount},

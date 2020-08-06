@@ -10,25 +10,15 @@ class Home extends React.Component {
         super(props)
         this.handleLogout = this.handleLogout.bind(this);
         this.state = {video: {}}
-        this.fetchVideos = this.fetchVideos.bind(this)
+        // this.fetchVideos = this.fetchVideos.bind(this)
 
     }
+
     handleLogout() {
-        
         this.props.logout()
             .then(() => this.props.history.push('/login'));
     }
 
-    fetchVideos(){
-        $.ajax
-        ({url: "/api/videos/4",
-        method: "GET"}).then(video => this.setState({video}))
-    }
-
-    componentDidMount(){
-        this.fetchVideos()
-        
-    }
 
 
     render () {

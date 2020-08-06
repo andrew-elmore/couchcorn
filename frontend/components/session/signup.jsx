@@ -23,7 +23,7 @@ class Signup extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.createNewAccount(this.state)
-            .then(() => this.props.history.push('/videos'));
+            .then(() => this.props.history.push('/'));
     }
 
     renderErrors() {
