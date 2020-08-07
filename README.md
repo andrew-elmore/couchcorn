@@ -16,15 +16,16 @@
 
 ## Homepage and Categories
 
-    Each video is assigned to one or more categories based on the subject of the video to allow users to easily find the video which interests them most. Clicking on a video takes the user to view that video. A user can also logout by pressing the logout button on the upper right hand corner of the page. 
+Each video is assigned to one or more categories based on the subject of the video to allow users to easily find the video which interests them most. Clicking on a video takes the user to view that video. A user can also logout by pressing the logout button on the upper right hand corner of the page. 
 
-    ![homepage](/app/assets/images/homepage.png)
-   
+![homepage](/app/assets/images/homepage.png)
+
+
 ## Video
 
-    Once a user clicks on a video they will be taken the viewer for that video. They are able to watch the video here and can return to the homepage by clicking the *COUCHCORN* logo at the top left corner. They can also log out by pressing the *Logout* button at the top right hand corner. 
+Once a user clicks on a video they will be taken the viewer for that video. They are able to watch the videohere and can return to the homepage by clicking the *COUCHCORN* logo at the top left corner. They can alsolog out by pressing the *Logout* button at the top right hand corner. 
 
-    ![video](/app/assets/images/video.png)
+![video](/app/assets/images/video.png)
 
 ## Future Development Ideas
     
