@@ -23,16 +23,18 @@ Each video is assigned to one or more categories based on the subject of the vid
 
 Each thumbnail is its own independent item component. This was done to make upcoming features such as a individual page for each category easier to execute. 
 
-`const VideoThumbnail = props => {
-    return (
-        <div className='video'>
-            <Link to={`/videos/${props.video.id}`}>
-                <p>{props.video.title}</p>
-                <img src={props.video.thumbnailurl}/>
-            </Link>
-        </div>
-    )
-}`
+```
+    const VideoThumbnail = props => {
+        return (
+            <div className='video'>
+                <Link to={`/videos/${props.video.id}`}>
+                    <p>{props.video.title}</p>
+                    <img src={props.video.thumbnailurl}/>
+                </Link>
+            </div>
+        )
+    }
+```
 
 ## Video
 
