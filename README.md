@@ -6,7 +6,7 @@
    
 ## Sign In and Sign Up
 
-   A user can easily sign in by entering the demo user email **name@website.com** and the demo password **password** and pressing the Log In! button. 
+   A user can easily sign in by entering the demo user email **name@website.com** and the demo password **password** and pressing the **Log In!** button. 
 
    ![login](/app/assets/images/login.png)
 
