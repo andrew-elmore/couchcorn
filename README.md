@@ -10,7 +10,7 @@
 
    ![login](/app/assets/images/login.png)
 
-   A user can also create their own account by pressing the **Sign up now** link. They will then be taken to the sign up page where they can enter a new email address and password and pressing continue. They will then be signed in and brought to the home page. If a user already has an account, they can click the **Sign In** link at the upper right hand corner of the page and be brought back to the sign in page.
+   A user can also create their own account by pressing the **Sign up now** link. They will then be taken to the sign up page where they can enter a new email address and password and pressing **CONTINUE**. They will then be signed in and brought to the home page. If a user already has an account, they can click the **Sign In** link at the upper right hand corner of the page and be brought back to the sign in page.
 
    ![signup](/app/assets/images/signup.png)
 
