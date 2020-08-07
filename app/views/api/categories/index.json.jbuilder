@@ -13,15 +13,5 @@
 end
 
 
-# @categories.each do |category|
-#     json.set! category.id do
-#         json.extract! category, :id, :name
-#         json.videos category.videos
-#         category.videos.each do |video|
-#             json.set! video.id do
-#                 json.partial! `api/videos/show`, video: video
-#             end
-#         end
-#     end
-# end
+
 

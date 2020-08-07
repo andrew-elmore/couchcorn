@@ -2,7 +2,7 @@
 
 ## Overview
 
-   Couchcorn is site where subscribers can sign up and view videos of interesting places from the comfort of their couch.
+   Couchcorn is site where subscribers can sign up and view videos of interesting places from the comfort of their couch. This site uses rails for all backend work, react/redux for all frontend work, and all videos and thumbnails are hosted on AWS.
    
 ## Sign In and Sign Up
 
@@ -21,6 +21,19 @@ Each video is assigned to one or more categories based on the subject of the vid
 ![homepage](/app/assets/images/homepage.png)
 
 
+Each thumbnail is its own independent item component. This was done to make upcoming features such as a individual page for each category easier to execute. 
+
+`const VideoThumbnail = props => {
+    return (
+        <div className='video'>
+            <Link to={`/videos/${props.video.id}`}>
+                <p>{props.video.title}</p>
+                <img src={props.video.thumbnailurl}/>
+            </Link>
+        </div>
+    )
+}`
+
 ## Video
 
 Once a user clicks on a video they will be taken the viewer for that video. They are able to watch the videohere and can return to the homepage by clicking the *COUCHCORN* logo at the top left corner. They can alsolog out by pressing the *Logout* button at the top right hand corner. 
@@ -32,4 +45,5 @@ Once a user clicks on a video they will be taken the viewer for that video. They
 - Allow users to have their own custom list which will appear as the last category on the homepage. 
 - Each account will have at least one, and can have up to five users.
 - Include a search feature which will allow users to search for a video by name.
+- Include a seperate page for each category which can be accessed by clicking on the category name.
     
