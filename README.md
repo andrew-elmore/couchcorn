@@ -6,11 +6,11 @@
    
 ## Sign In and Sign Up
 
-   A user can easily sign in by entering the demo user email *name@website.com* and the demo password *password* and pressing the Log In! button. 
+   A user can easily sign in by entering the demo user email **name@website.com** and the demo password **password** and pressing the Log In! button. 
 
    ![login](/app/assets/images/login.png)
 
-   A user can also create their own account by pressing the *Sign up now* link. They will then be taken to the sign up page where they can enter a new email address and password and pressing continue. They will then be signed in and brought to the home page. If a user already has an account, they can click the *Sign In* link at the upper right hand corner of the page and be brought back to the sign in page.
+   A user can also create their own account by pressing the **Sign up now** link. They will then be taken to the sign up page where they can enter a new email address and password and pressing continue. They will then be signed in and brought to the home page. If a user already has an account, they can click the **Sign In** link at the upper right hand corner of the page and be brought back to the sign in page.
 
    ![signup](/app/assets/images/signup.png)
 
@@ -38,7 +38,7 @@ Each thumbnail is its own independent item component. This was done to make upco
 
 ## Video
 
-Once a user clicks on a video they will be taken the viewer for that video. They are able to watch the videohere and can return to the homepage by clicking the *COUCHCORN* logo at the top left corner. They can alsolog out by pressing the *Logout* button at the top right hand corner. 
+Once a user clicks on a video they will be taken the viewer for that video. They are able to watch the videohere and can return to the homepage by clicking the **COUCHCORN** logo at the top left corner. They can alsolog out by pressing the **Logout** button at the top right hand corner. 
 
 ![video](/app/assets/images/video.png)
 
