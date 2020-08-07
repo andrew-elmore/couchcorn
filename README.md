@@ -1,39 +1,17 @@
-# README
+# Couchcorn
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Overview
+===================================
+   Couchcorn is site where subscribers can sign up and view videos of interesting places from the comfort of their couch.
+   
+## Sign In and Sign Up
+   A user can easily sign in by entering the demo user email 'name@website.com' and the demo password 'password' and pressing the Log In! button. 
 
-Things you may want to cover:
+   ![login](/assets/images/login.png)
 
-* Ruby version
+   A user can also create their own account by pressing the 'Sign up now' link. They will then be taken to the sign up page where they can enter a new email address and password and pressing continue. They will then be signed in and brought to the home page.
 
-* System dependencies
+   ![signup](/assets/images/signup.png)
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
    
-
-
-npm install --save webpack
-npm install --save webpack-cli
-npm install --save react
-npm install --save react-dom
-npm install --save react-router-dom
-npm install --save redux
-npm install --save react-redux
-npm install --save @babel/core
-npm install --save @babel/preset-react
-npm install --save @babel/preset-env
-npm install --save babel-loader

@@ -53,10 +53,10 @@ thumb5 = open('https://couchcorn-seed.s3.amazonaws.com/colby_moore--never_sleep.
 video5.thumbnail.attach(io: thumb5, filename: 'colby_moore--never_sleep.png')
 
 video6 = Video.create!(title: 'The London Feeling', description: 'Created by Davide Quatela')
-film6 = open('https://couchcorn-seed.s3.amazonaws.com/colby_moore--never_sleep.mp4')
-video6.film.attach(io: film6, filename: 'colby_moore--never_sleep.mp4')
-thumb6 = open('https://couchcorn-seed.s3.amazonaws.com/colby_moore--never_sleep.png')
-video6.thumbnail.attach(io: thumb6, filename: 'colby_moore--never_sleep.png')
+film6 = open('https://couchcorn-seed.s3.amazonaws.com/davide_quatela--the_london_feeling.png')
+video6.film.attach(io: film6, filename: 'davide_quatela--the_london_feeling.png')
+thumb6 = open('https://couchcorn-seed.s3.amazonaws.com/davide_quatela--the_london_feeling.png')
+video6.thumbnail.attach(io: thumb6, filename: 'davide_quatela--the_london_feeling.png')
 
 video7 = Video.create!(title: 'Las Vegas', description: 'Created by Philip Bloom and Tom Poederbach')
 film7 = open('https://couchcorn-seed.s3.amazonaws.com/tom_poederbach--las_vegas_blvd_copy_for_vimeo_by_philip_bloom.mp4')
