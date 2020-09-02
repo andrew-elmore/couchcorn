@@ -7,10 +7,10 @@ class Signup extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            account_email: '',
+            account_email: props.account_email,
             password: ''
         };
-
+        debugger
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
