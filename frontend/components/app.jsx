@@ -13,7 +13,7 @@ export default () => (
     <ProtectedRoute path='/' component={VideosContainer} />
     <Switch>
       <ProtectedRoute path='/videos/:videoId' component={VideoContainer} />
-      <ProtectedRoute exact path='/' component={categoryContainer} />
+      <ProtectedRoute exact path='/videos' component={categoryContainer} />
     </Switch>
     <Switch>
       <AuthRoute exact path="/" component={LandingPage} />
