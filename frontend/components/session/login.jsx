@@ -12,7 +12,13 @@ class Login extends React.Component {
             password: '',
         };
 
+        this.demo = {
+            account_email: 'name@website.com',
+            password: 'password',
+        }
+
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
     }
 
     handleChange(type) {
@@ -26,8 +32,15 @@ class Login extends React.Component {
         this.props.login(this.state)
             .then(() => this.props.history.push('/'));
     }
+
+    handleDemoSubmit(e) {
+
+        e.preventDefault();
+        this.props.login(this.demo)
+            .then(() => this.props.history.push('/'));
+    }
+
     renderErrors() {
-        
         return (
             <ul>
                 {this.props.errors.map((error, i) => (
@@ -65,6 +78,7 @@ class Login extends React.Component {
                         />
                         <button onClick={this.handleSubmit}>Log In!</button>
                     </label>
+                    <button onClick={this.handleDemoSubmit} className='demologin'>Demo Log In!</button>
                 </form>
                 <p className="toneedhelp"><Link to="https://www.netflix.com/LoginHelp">Need help?</Link></p>
                 

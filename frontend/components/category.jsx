@@ -9,6 +9,7 @@ class Category extends React.Component {
 
 
     componentDidMount() {
+        debugger
         this.props.fetchCategories()
     }
 
