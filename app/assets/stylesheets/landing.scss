@@ -1,0 +1,122 @@
+.landing {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    position: relative;
+    background-image: url(./loginBackground.png);
+      background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+
+
+
+
+.landing div {
+    color: white;
+}
+
+
+
+.authtopbar {
+    display: flex;
+    height: 20px;
+    align-content: center;
+    justify-content: center;
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.authtopbar .home {
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    text-decoration: none;
+    color: rgb(229, 9, 20);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.authtopbar .loginbutton{
+    background-color: red;
+    border: red;
+    border-radius: 4px;
+    margin: auto;
+    margin-left: 83%;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+.landing .centerpannel {
+    width: 640px;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 165px;
+}
+
+.centerpannel h1{
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 100%;
+    font-size: 3.125rem;
+}
+
+
+.centerpannel h2{
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 100%;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    font-size: 1.625rem;
+    font-weight: 400;
+}
+
+.centerpannel h3{
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 100%;
+    font-weight: normal;
+    padding-bottom: 20px;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+
+.centerpannel a {
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    background-color: red;
+    color: white;
+    font-size: 1.625rem;
+    text-decoration: none;
+    padding-right: 10px;
+    padding-left: 9px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    position: absolute;
+    top: 454px;
+}
+
+
+
+.centerpannel input{
+    height: 60px;
+    border: 0;
+    padding: 0px;
+    width: auto;
+    width: 330px;
+    margin-top: -10px;
+}

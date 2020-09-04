@@ -7,11 +7,14 @@ class Signup extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            account_email: props.account_email,
+            account_email: props.location.state.test,
             password: ''
         };
-        debugger
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidMount(){
+        
     }
 
     handleChange(type) {
@@ -40,6 +43,7 @@ class Signup extends React.Component {
     }
     
     render() {
+        debugger
         return (
             <div className="signup" >
                     <span className="heading"><Link to={`/login`}>Sign In</Link></span>
@@ -52,7 +56,9 @@ class Signup extends React.Component {
                         <label>Email:
                             <input type="text" 
                             value={this.state.account_email} 
-                            onChange={this.handleChange('account_email')}/>
+                            onChange={this.handleChange('account_email')}
+                            placeholder={`email`}
+                            />
                         </label>
 
                         <label>Password:
@@ -60,6 +66,7 @@ class Signup extends React.Component {
                                 type="password"
                                 value={this.state.password}
                                 onChange={this.handleChange('password')}
+                                placeholder={`password`}
                             />
                         </label>
 
@@ -74,6 +81,7 @@ class Signup extends React.Component {
 const mapStateToProps = (state, { errors }) => {
     return ({
         errors: state.errors,
+
     })
 };
 
