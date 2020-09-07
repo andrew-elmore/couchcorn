@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { login } from '../../actions/session'; 
+import { login, clearErrors } from '../../actions/session'; 
 import { Link } from 'react-router-dom';
 
 
@@ -52,6 +52,10 @@ class Login extends React.Component {
         );
     }
 
+    componentWillUnmount() {
+        this.props.clearErrors();
+    }
+
     render() {
         // console.log(this.props);
         return (
@@ -67,6 +71,7 @@ class Login extends React.Component {
                             type="text"
                             value={this.state.account_email}
                             onChange={this.handleChange('account_email')}
+                            placeholder="Email"
                         />
                     </label>
 
@@ -75,6 +80,7 @@ class Login extends React.Component {
                             type="password"
                             value={this.state.password}
                             onChange={this.handleChange('password')}
+                            placeholder="Password"
                         />
                         <button onClick={this.handleSubmit}>Log In!</button>
                     </label>
@@ -83,7 +89,7 @@ class Login extends React.Component {
                 <p className="toneedhelp"><Link to="https://www.netflix.com/LoginHelp">Need help?</Link></p>
                 
                 <p className="tofacebook"><Link to="https://www.facebook.com">Login with Facebook</Link></p>
-                <p className="tosignup">New to Netflix?  <Link to={`/signup`}>Sign up now.</Link></p>
+                    <p className="tosignup">New to Netflix?  <Link to={{ pathname: `/signup`, state: { test: this.state.account_email } }}>Sign up now.</Link></p>
 
                 
                 <p className="recaptcha">This page is not protected by Google reCAPTCHA feel free to use it if you are a bot. Learn more.</p>
@@ -99,6 +105,8 @@ const mapStateToProps = (state, { errors }) => {
 
 const mapDispatchToProps = dispatch => ({
     login: formAccount => dispatch(login(formAccount)),
+    clearErrors: () => dispatch(clearErrors())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
+

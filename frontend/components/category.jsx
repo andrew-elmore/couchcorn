@@ -9,27 +9,38 @@ class Category extends React.Component {
 
 
     componentDidMount() {
-        debugger
         this.props.fetchCategories()
     }
 
+    scroll(category){
+        console.log(category)
+        category.videos.push(category.videos.shift())
+    }
+
     render() {
-        debugger
         const { categories } = this.props;
         if (categories === undefined) {
             return (<div className="categories">No Categories</div>)
         }
+        
         return (
             <div className="categories">
                 {categories.map(category => 
-                <div className= "category">
+                    <div className="category" key={category.name}>
                     <h1 key={category.id}>{category.name}</h1>
                     <ul>
                         {Object.values(category.videos).map(video => 
-                            <li key={video.id}>
+                            <li key={`${category.name}-${video.id + 1}`}>
                                 <VideoThumbnail video={video}/>
                             </li>
                         )}
+                        <div 
+                        id={`${category.name}-${0}`} 
+                        className="category-scroll"
+                        onClick={() => {this.scroll(category)}}
+                        >
+                            {`>`}
+                        </div>
                     </ul>
                 </div>
                 )}

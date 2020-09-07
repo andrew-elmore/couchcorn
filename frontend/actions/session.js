@@ -4,6 +4,7 @@ import {postAccount, postSession, deleteSession} from '../util/session'
 export const RECEIVE_CURRENT_ACCOUNT = 'RECEIVE_CURRENT_ACCOUNT';
 export const LOGOUT_CURRENT_ACCOUNT = 'LOGOUT_CURRENT_ACCOUNT';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
+export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
 
 const receiveCurrentAccount = account => ({
@@ -14,6 +15,11 @@ const receiveCurrentAccount = account => ({
 const logoutCurrentAccount = () => ({
     type: LOGOUT_CURRENT_ACCOUNT,
 });
+
+export const clearErrors = () => ({
+    type: CLEAR_ERRORS,
+
+}) 
 
 export const createNewAccount = formAccount => dispatch => 
     postAccount(formAccount)

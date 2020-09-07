@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { createNewAccount } from '../../actions/session';
+import { createNewAccount, clearErrors } from '../../actions/session';
 import { Link } from 'react-router-dom';
 
 class Signup extends React.Component {
@@ -28,6 +28,10 @@ class Signup extends React.Component {
         this.props.createNewAccount(this.state)
             .then(() => this.props.history.push('/'));
     }
+    componentWillUnmount() {
+        this.props.clearErrors();
+    }
+
 
     renderErrors() {
     
@@ -87,6 +91,7 @@ const mapStateToProps = (state, { errors }) => {
 
 const mapDispatchToProps = dispatch => ({
     createNewAccount: formAccount => dispatch(createNewAccount(formAccount)),
+    clearErrors: () => dispatch(clearErrors())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Signup);
