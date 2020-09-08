@@ -23,7 +23,6 @@ class Category extends React.Component {
 
         let totalLen = ((Object.keys(category.videos).length) * 220) 
 
-        console.log(totalLen)
 
         let adj = 0
         if (num < 0){
@@ -31,7 +30,6 @@ class Category extends React.Component {
         } else {
             adj = Math.max(- 1320, -1 * (totalLen + currentLeft - 1320))
         }
-        console.log((currentLeft + (adj)))
         ul.style.left = (`${(currentLeft + (adj)) + 60}px`)
     }
 

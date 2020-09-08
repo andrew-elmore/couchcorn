@@ -47,7 +47,6 @@ class Signup extends React.Component {
     }
     
     render() {
-        debugger
         return (
             <div className="signup" >
                     <span className="heading"><Link to={`/login`}>Sign In</Link></span>
