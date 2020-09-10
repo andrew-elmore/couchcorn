@@ -23,6 +23,7 @@ class Landing extends React.Component {
         return (
             <div className="landing">
                 <div className='backgroundimg'>
+                    
                 </div>
                 <div className='authtopbar'>
                     <Link className='home' to='/'>COUCHCORN</Link>
