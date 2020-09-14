@@ -3,10 +3,9 @@
     width: 100vw;
     background-color: black;
     position: relative;
-    // background-image: url(/assets/images/loginBackground.png);
     background-repeat: no-repeat;
     background-size: 100%;
-    background-image: url(asset_path("loginBackground.png"))
+    background-image: url(asset_path("loginBackground.png"));
 }
 
 
@@ -38,6 +37,7 @@
 }
 
 .authtopbar .loginbutton{
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
     background-color: red;
     border: red;
     border-radius: 4px;
@@ -52,6 +52,7 @@
 
 
 .landing .centerpannel {
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
     width: 640px;
     margin-top: 0;
     margin-left: auto;
@@ -114,6 +115,7 @@
 
 
 .centerpannel input{
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
     height: 60px;
     border: 0;
     padding: 0px;
