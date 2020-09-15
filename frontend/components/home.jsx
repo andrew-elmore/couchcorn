@@ -28,7 +28,12 @@ class Home extends React.Component {
         if(event.target.value.length === 0){
             this.props.history.push('/videos');
         } else {
-            this.props.history.push('/search');
+            this.props.history.push({
+                pathname: '/search',
+            });
+            this.props.history.push({
+                search: event.target.value
+            })
         }
     }
 
@@ -61,7 +66,8 @@ const mstp = (state) => ({
 });
 
 const mdtp = (dispatch) => ({
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    // updateSearch:
 })
 
 export default connect(mstp, mdtp)(Home)

@@ -6,20 +6,54 @@ import { fetchVideos } from '../actions/video';
 class Search extends React.Component{
     constructor(props) {
         super(props);
+        this.state = {
+            searchValue: props.location.search.replace('%20', ' '),
+        }
+
+        this.renderVideos = this.renderVideos.bind(this)
+    }
+
+    static getDerivedStateFromProps(nextProps, prevState) {
+        if (nextProps.location.search !== prevState.searchValue) {
+            return { searchValue: nextProps.location.search.replace('%20', ' ') };
+        }
+        else {
+            return null;
+        }
     }
 
     componentDidMount() {
         this.props.fetchVideos()
     }
 
-    render () {
+    renderVideos() {
+        let videos = []
+        let searchValue = this.state.searchValue
+        if (this.props.videos.length != 0) {
+            this.props.videos.forEach(video => {
+                if(video.title.slice(0, searchValue.length - 1) === searchValue.slice(1, searchValue.length)){
+                    videos.push(video)
+            }
+        })
+        return(
+            videos.map(video =>
+                <li key={video.id}>
+                    <VideoThumbnail video={video} />
+                </li>
+                )
+                )
+            } else {
+                return (<p>Finding Videos</p>)
+            }
+        }
         
-        return (
+        render () {
+            
+            
+            return (
             <div>
                 <ul>
-                    {this.props.videos.map(video =>
-                        <VideoThumbnail video={video} />
-                    )}
+                    {this.renderVideos()}
                 </ul>
             </div>
         )
