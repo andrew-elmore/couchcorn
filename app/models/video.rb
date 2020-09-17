@@ -9,4 +9,13 @@ class Video < ApplicationRecord
     has_many :categories,
         through: :assignments,
         source: :category
+
+
+    has_many :list_assignments,
+        class_name: :List,
+        foreign_key: :video_id
+
+    has_many :categories,
+        through: :list_assignments,
+        source: :account
 end
