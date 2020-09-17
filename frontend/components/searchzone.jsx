@@ -51,7 +51,7 @@ class Search extends React.Component{
             
             
             return (
-            <div>
+            <div className="searchzone">
                 <ul>
                     {this.renderVideos()}
                 </ul>

@@ -1,0 +1,56 @@
+.searchzone {
+    background-color: rgb(49, 49, 49);
+    width: 100%;
+    height: 100%;
+}
+
+.searchzone .category{
+    padding: 20px;
+    position: relative;
+    height: 180px;
+}
+.searchzone h1{
+    margin: 0;
+    color: white;
+}
+
+
+.searchzone ul {
+    display: flex;
+    list-style: none;
+    position: absolute;
+    padding: 0px;
+    left: 60px;
+    z-index: 4;
+}
+
+.searchzone li{
+    width: 218px;
+    height: 125px;
+    background-color: black;
+    margin: 1px;
+    position: relative;
+}
+
+.searchzone img{
+    width: 218px;
+    height: 125px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.searchzone p {
+    position: absolute;
+    top: 107px;
+    left: 0;
+    margin: 0;
+    z-index: 4;
+    width: 218px;
+    background-color: rgb(55, 55, 55) ;
+    opacity: 0.5;
+    color: white;
+    text-decoration: none;
+}
+
