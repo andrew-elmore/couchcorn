@@ -14,7 +14,10 @@ class Account < ApplicationRecord
         through: :assignments,
         source: :video
 
+
   after_initialize :ensure_session_token
+
+
 
 
   def self.find_by_credentials(account_email, password)
