@@ -54,6 +54,7 @@ class Home extends React.Component {
                     </form>
                 </div>
 
+                <Link to={`/mylist`}>My List</Link>
 
                 <div className="logout">
                     <button onClick={this.handleLogout}>Logout</button>
