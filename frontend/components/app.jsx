@@ -8,11 +8,13 @@ import SearchZone from './searchzone'
 import LandingPage from './landingpage'
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import {Switch} from 'react-router-dom'
+import mylist from './mylist';
 
 export default () => (
   <div>
     <ProtectedRoute path='/' component={VideosContainer} />
     <Switch>
+      <ProtectedRoute path='/mylist' component={mylist} />
       <ProtectedRoute path='/videos/:videoId' component={VideoContainer} />
       <ProtectedRoute exact path='/videos' component={CategoryContainer} />
       <ProtectedRoute exact path='/search' component={SearchZone} />

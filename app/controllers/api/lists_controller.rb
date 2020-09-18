@@ -1,13 +1,12 @@
 class Api::ListsController < ApplicationController
 
   def create
-    @account_list = List.find_by(account_id: params.require(:list)[:account_id], video_id: params.require(:list)[:video_id])
-    if @account_id == nil
+    @account_item = List.find_by(account_id: params.require(:list)[:account_id], video_id: params.require(:list)[:video_id])
+    if @account_item == nil
       List.create(list_params)
     else
-      List.destroy(list_params)
+      @account_item.destroy
     end
-    p List.all
   end
 
 
