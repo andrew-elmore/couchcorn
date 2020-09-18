@@ -34,6 +34,7 @@ class Category extends React.Component {
     }
 
     render() {
+        let account_id = this.props.account_id
         const { categories } = this.props;
         if (categories === undefined) {
             return (<div className="categories">No Categories</div>)
@@ -54,7 +55,7 @@ class Category extends React.Component {
                         
                         {Object.values(category.videos).map(video => 
                             <li key={`${category.name}-${video.id + 1}`}>
-                                <VideoThumbnail video={video}/>
+                                <VideoThumbnail video={video} account_id={account_id}/>
                             </li>
                         )}
                         
@@ -76,6 +77,7 @@ class Category extends React.Component {
 
 const mstp = (state, ownProps) => {
     return ({
+        account_id: state.session.currentAccount.id,
         categories: Object.values(state.categories)
     })
 };

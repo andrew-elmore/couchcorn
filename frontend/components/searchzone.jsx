@@ -35,10 +35,11 @@ class Search extends React.Component{
                     videos.push(video)
             }
         })
+        let account_id = this.props.account_id
         return(
             videos.map(video =>
                 <li key={video.id}>
-                    <VideoThumbnail video={video} />
+                    <VideoThumbnail video={video} account_id={account_id}/>
                 </li>
                 )
                 )
@@ -63,6 +64,7 @@ class Search extends React.Component{
 
 const mstp = (state, ownProps) => {
     return ({
+        account_id: state.session.currentAccount.id,
         videos: Object.values(state.videos)
     })
 };
