@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../actions/session';
+import { createNewListItem } from '../actions/list';
 import { Link } from 'react-router-dom';
 
 
@@ -14,7 +15,6 @@ class Home extends React.Component {
             searchValue: ""
         }
         this.handleChange = this.handleChange.bind(this)
-
     }
 
     handleLogout() {
@@ -39,6 +39,7 @@ class Home extends React.Component {
 
 
 
+
     render () {
         
         return (
@@ -52,6 +53,7 @@ class Home extends React.Component {
                         <input type="text" onChange={this.handleChange} value={this.state.searchValue}/>
                     </form>
                 </div>
+
 
                 <div className="logout">
                     <button onClick={this.handleLogout}>Logout</button>
@@ -67,7 +69,6 @@ const mstp = (state) => ({
 
 const mdtp = (dispatch) => ({
     logout: () => dispatch(logout()),
-    // updateSearch:
 })
 
 export default connect(mstp, mdtp)(Home)

@@ -1,4 +1,4 @@
-import { } from '../actions/list';
+import { RECEIVE_SESSION_ERRORS, RECEIVE_CURRENT_ACCOUNT, CLEAR_ERRORS} from '../actions/session';
 
 export default (state = [], action) => {
     

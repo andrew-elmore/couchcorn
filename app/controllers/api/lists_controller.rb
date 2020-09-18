@@ -1,12 +1,20 @@
-class Api::Listsontroller < ApplicationController
+class Api::ListsController < ApplicationController
 
   def create
-    puts params
-    # @account = Account.new(params.require(:account).permit(:account_id, :video_id))
+    @account_list = List.find_by(account_id: params.require(:list)[:account_id], video_id: params.require(:list)[:video_id])
+    if @account_id == nil
+      List.create(list_params)
+    else
+      List.destroy(list_params)
+    end
+    p List.all
   end
 
-  def delete
 
+
+  private
+
+  def list_params
+    params.require(:list).permit(:account_id, :video_id)
   end
-
 end
