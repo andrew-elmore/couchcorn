@@ -11,6 +11,7 @@ class Video < ApplicationRecord
         source: :category
 
 
+
     has_many :list_assignments,
         class_name: :List,
         foreign_key: :video_id
@@ -18,4 +19,5 @@ class Video < ApplicationRecord
     has_many :categories,
         through: :list_assignments,
         source: :account
+
 end
