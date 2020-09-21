@@ -9,7 +9,10 @@ class Api::ListsController < ApplicationController
     end
   end
 
-
+    def show
+        @account = Account.find(params[:id])
+        render :show
+    end
 
   private
 

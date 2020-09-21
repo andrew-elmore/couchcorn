@@ -1,5 +1,4 @@
 export const postList = (list) => {
-    debugger
     return $.ajax({
         url: '/api/lists',
         method: 'POST',
@@ -7,9 +6,10 @@ export const postList = (list) => {
     });
 };
 
-export const deleteSession = () => {
+
+export const fetchList = (account_id) => {
     return $.ajax({
-        url: '/api/lists',
-        method: 'DELETE'
+        url: `/api/list/${account_id}`,
+        method: "GET"
     })
 }

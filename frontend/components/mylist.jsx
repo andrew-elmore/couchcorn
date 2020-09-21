@@ -10,23 +10,28 @@ class myList extends React.Component{
         }
     }
 
+    componentDidMount(){
+        fetchList()
+    }
+
     render(){
         return (
             <div className='myList'>
-                
+                List
             </div>
         )
     }
 }
 
 const mstp = (state, ownProps) => {
+    debugger
     return ({
 
     })
 };
 
 const mdtp = (dispatch) => ({
-
+    fetchVideo: account_id => dispatch(fetchVideo(account_id)),
 })
 
 export default connect(mstp, mdtp)(myList)
