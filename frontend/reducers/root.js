@@ -11,5 +11,5 @@ export default combineReducers({
   errors: errorsReducer,
   videos: videoReducer,
   categories: categoriesReducer,
-  lists: listReducer
+  list: listReducer
 });

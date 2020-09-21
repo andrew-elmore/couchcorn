@@ -1,11 +1,11 @@
-import { RECEIVE_CURRENT_LIST } from '../actions/category';
+import { RECEIVE_LIST } from '../actions/list';
 
 export default (state = {}, action) => {
-
     Object.freeze(state);
+    debugger
     switch (action.type) {
-        case RECEIVE_CURRENT_LIST:
-            return Object.assign({}, state, action.list );
+        case RECEIVE_LIST:
+            return Object.assign({}, state,  Object.values(action.list.videos) );
         default:
             return state;
     }

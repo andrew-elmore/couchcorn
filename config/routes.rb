@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resource :account, only: [:create, :show]
     resources :videos, only: [:show, :index]
     resources :categories, only: [:index]
-    resources :lists, only: [:create, :destroy]
+    resources :lists, only: [:create, :destroy, :show]
   end
   root to: 'static_pages#root' 
   

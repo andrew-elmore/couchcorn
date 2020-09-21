@@ -9,7 +9,11 @@ class Api::ListsController < ApplicationController
     end
   end
 
-
+    def show
+      @account = Account.find(params[:id])
+      puts @account.videos
+      render :show
+    end
 
   private
 
