@@ -1,4 +1,4 @@
-import { RECEIVE_CURRENT_LIST } from '../actions/category';
+import { RECEIVE_CURRENT_LIST, RECEIVE_LIST } from '../actions/category';
 
 export default (state = {}, action) => {
 

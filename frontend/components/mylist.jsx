@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { fetchList } from '../actions/list';
 
 
 class myList extends React.Component{
@@ -11,7 +12,8 @@ class myList extends React.Component{
     }
 
     componentDidMount(){
-        fetchList()
+        fetchList(this.props.account_id)
+        debugger
     }
 
     render(){
@@ -24,14 +26,18 @@ class myList extends React.Component{
 }
 
 const mstp = (state, ownProps) => {
-    debugger
+    // debugger
     return ({
-
+        account_id: state.session.currentAccount.id,
+        list: state.lists
     })
 };
 
-const mdtp = (dispatch) => ({
-    fetchVideo: account_id => dispatch(fetchVideo(account_id)),
-})
+
+const mdtp = (dispatch) => {
+    return({
+        fetchList: account_id => dispatch(fetchList(account_id)),
+    })
+}
 
 export default connect(mstp, mdtp)(myList)
