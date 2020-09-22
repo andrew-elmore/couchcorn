@@ -29,9 +29,11 @@ class myList extends React.Component{
             let account_id = this.props.account_id
             return (
                 videos.map(video =>
-                    <li key={video.id}>
-                        <VideoThumbnail video={video} account_id={account_id} />
-                    </li>
+                    <ul>
+                        <li key={video.id}>
+                            <VideoThumbnail video={video} account_id={account_id} />
+                        </li>
+                    </ul>
                 )
             )
         }
@@ -40,8 +42,10 @@ class myList extends React.Component{
     render(){
 
         return (
-            <div className='myList'>
-                {this.renderVideos()}
+            <div className='render-video-tiles'>
+                <div className='render-zone'>
+                    {this.renderVideos()}
+                </div>
             </div>
         )
     }

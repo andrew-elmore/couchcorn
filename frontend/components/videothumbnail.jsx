@@ -14,12 +14,14 @@ function createListItem(video_id, account_id){
 export const VideoThumbnail = props => {
     // let account_id = 
     return (
-        <div className='video'>
+        <div className='video-thumbnail'>
+            <div className="button">
+                <button onClick={() => createListItem(props.video.id, props.account_id)}>+</button>
+            </div>
             <Link to={`/videos/${props.video.id}`}>
                 <p>{props.video.title}</p>
-                {/* <img src={props.video.thumbnailurl}/> */}
+                <img src={props.video.thumbnailurl}/>
             </Link>
-                <button onClick={() => createListItem(props.video.id, props.account_id)}>+</button>
         </div>
     )
 }

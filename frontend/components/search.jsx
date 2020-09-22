@@ -38,9 +38,11 @@ class Search extends React.Component{
         let account_id = this.props.account_id
         return(
             videos.map(video =>
-                <li key={video.id}>
-                    <VideoThumbnail video={video} account_id={account_id}/>
-                </li>
+                
+                    <li key={video.id}>
+                        <VideoThumbnail video={video} account_id={account_id} />
+                    </li>
+                
                 )
                 )
             } else {
@@ -52,11 +54,13 @@ class Search extends React.Component{
             
             
             return (
-            <div className="searchzone">
-                <ul>
-                    {this.renderVideos()}
-                </ul>
-            </div>
+                <div className='render-video-tiles'>
+                    <div className='render-zone'>
+                        <ul>
+                            {this.renderVideos()}
+                        </ul>
+                    </div>
+                </div>
         )
     }
 }
