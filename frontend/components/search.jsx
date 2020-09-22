@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import VideoThumbnail from './videothumbnail';
+import { fetchList, createListItem, deleteListItem } from '../actions/list';
 import { fetchVideos } from '../actions/video';
 
 class Search extends React.Component{
@@ -24,11 +25,13 @@ class Search extends React.Component{
 
     componentDidMount() {
         this.props.fetchVideos()
+        this.props.fetchList(this.props.account_id)
     }
 
     renderVideos() {
         let videos = []
         let searchValue = this.state.searchValue
+        let idList = this.props.list.map(video => video.id)
         if (this.props.videos.length != 0) {
             this.props.videos.forEach(video => {
                 if (video.title.slice(0, searchValue.length - 1).toLowerCase() === searchValue.slice(1, searchValue.length).toLowerCase()){
@@ -40,7 +43,7 @@ class Search extends React.Component{
             videos.map(video =>
                 
                     <li key={video.id}>
-                        <VideoThumbnail video={video} account_id={account_id} />
+                        <VideoThumbnail video={video} account_id={account_id} idList={idList} />
                     </li>
                 
                 )
@@ -68,12 +71,14 @@ class Search extends React.Component{
 
 const mstp = (state, ownProps) => {
     return ({
+        list: Object.values(state.list),
         account_id: state.session.currentAccount.id,
         videos: Object.values(state.videos)
     })
 };
 
 const mdtp = (dispatch) => ({
+    fetchList: account_id => dispatch(fetchList(account_id)),
     fetchVideos: () => dispatch(fetchVideos()),
 })
 

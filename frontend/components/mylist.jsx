@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchList } from '../actions/list';
+import { fetchList, createListItem, deleteListItem } from '../actions/list';
 import VideoThumbnail from './videothumbnail';
 
 
@@ -19,6 +19,7 @@ class myList extends React.Component{
     }
 
     renderVideos(){
+        let idList = this.props.list.map(video => video.id)
         let videos = []
         if (this.props.list.length === 0){
             return(
@@ -31,7 +32,7 @@ class myList extends React.Component{
                 videos.map(video =>
                     <ul>
                         <li key={video.id}>
-                            <VideoThumbnail video={video} account_id={account_id} />
+                            <VideoThumbnail video={video} account_id={account_id} idList={idList}/>
                         </li>
                     </ul>
                 )
@@ -66,3 +67,5 @@ const mdtp = (dispatch) => {
 }
 
 export default connect(mstp, mdtp)(myList)
+
+
