@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchCategories } from '../actions/category';
+import { fetchList, createListItem, deleteListItem } from '../actions/list';
 import VideoThumbnail from './videothumbnail'
 
 
@@ -13,6 +14,7 @@ class Category extends React.Component {
 
     componentDidMount() {
         this.props.fetchCategories()
+        this.props.fetchList(this.props.account_id)
     }
 
 
@@ -34,6 +36,7 @@ class Category extends React.Component {
     }
 
     render() {
+        let idList = this.props.list.map(video => video.id)
         let account_id = this.props.account_id
         const { categories } = this.props;
         if (categories === undefined) {
@@ -55,7 +58,7 @@ class Category extends React.Component {
                         
                         {Object.values(category.videos).map(video => 
                             <li key={`${category.name}-${video.id + 1}`}>
-                                <VideoThumbnail video={video} account_id={account_id}/>
+                                <VideoThumbnail video={video} account_id={account_id} idList={idList}/>
                             </li>
                         )}
                         
@@ -77,12 +80,14 @@ class Category extends React.Component {
 
 const mstp = (state, ownProps) => {
     return ({
+        list: Object.values(state.list),
         account_id: state.session.currentAccount.id,
         categories: Object.values(state.categories)
     })
 };
 
 const mdtp = (dispatch) => ({
+    fetchList: account_id => dispatch(fetchList(account_id)),
     fetchCategories: () => dispatch(fetchCategories()),
 })
 
