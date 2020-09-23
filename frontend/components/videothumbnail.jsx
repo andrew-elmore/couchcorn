@@ -1,23 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function createListItem(video_id, account_id){
-    let list = { video_id: video_id, account_id: account_id }
-    $.ajax({
-        url: '/api/lists',
-        method: 'POST',
-        data: { list }
-    });
-}
 
-function deleteListItem(video_id, account_id){
-    let list = { video_id: video_id, account_id: account_id }
-    $.ajax({
-        url: '/api/lists',
-        method: 'DELETE',
-        data: { list }
-    });
-}
 
 
 
@@ -28,7 +12,7 @@ export const VideoThumbnail = props => {
             return (
                 <div className='video-thumbnail'>
                     <div className="button">
-                        <button onClick={() => deleteListItem(props.video.id, props.account_id)}>-</button>
+                        <button onClick={() => props.deleteListItem(props.video.id, props.account_id, props.list)}>-</button>
                     </div>
                     <Link to={`/videos/${props.video.id}`}>
                         <p>{props.video.title}</p>
@@ -40,7 +24,7 @@ export const VideoThumbnail = props => {
         return (
             <div className='video-thumbnail'>
                 <div className="button">
-                    <button onClick={() => createListItem(props.video.id, props.account_id)}>+</button>
+                    <button onClick={() => props.createListItem({video_id: props.video.id, account_id: props.account_id})}>+</button>
                 </div>
                 <Link to={`/videos/${props.video.id}`}>
                     <p>{props.video.title}</p>

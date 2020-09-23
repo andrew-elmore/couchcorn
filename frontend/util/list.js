@@ -1,13 +1,13 @@
 export const createListItem = (listData) => {
-    $.ajax({
+    return $.ajax({
         url: '/api/lists',
         method: 'POST',
         data: { listData }
     });
 }
 
-export const deleteListItem = (video_id, account_id) => {
-    $.ajax({
+export const deleteListItem = (listData) => {
+    return $.ajax({
         url: '/api/lists',
         method: 'DELETE',
         data: { listData }
