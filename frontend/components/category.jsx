@@ -36,7 +36,7 @@ class Category extends React.Component {
     }
 
     render() {
-        let idList = this.props.list.map(video => video.id)
+        let idList = Object.values(this.props.list).map(video => video.id)
         let account_id = this.props.account_id
         const { categories } = this.props;
         if (categories === undefined) {
@@ -58,7 +58,14 @@ class Category extends React.Component {
                         
                         {Object.values(category.videos).map(video => 
                             <li key={`${category.name}-${video.id + 1}`}>
-                                <VideoThumbnail video={video} account_id={account_id} idList={idList}/>
+                                <VideoThumbnail 
+                                video={video} 
+                                account_id={account_id} 
+                                idList={idList} 
+                                list={this.props.list}
+                                createListItem={this.props.createListItem}
+                                deleteListItem={this.props.deleteListItem}
+                                />
                             </li>
                         )}
                         
@@ -79,14 +86,16 @@ class Category extends React.Component {
 
 
 const mstp = (state, ownProps) => {
+    debugger
     return ({
-        list: Object.values(state.list),
+        list: state.list,
         account_id: state.session.currentAccount.id,
         categories: Object.values(state.categories)
     })
 };
 
 const mdtp = (dispatch) => ({
+    createListItem: listData => dispatch(createListItem(listData)),
     fetchList: account_id => dispatch(fetchList(account_id)),
     fetchCategories: () => dispatch(fetchCategories()),
 })
