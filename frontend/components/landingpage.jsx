@@ -50,7 +50,6 @@ class Landing extends React.Component {
         )
     }
 }
-// account_email: this.state.account_email
 
 
 const mstp = (state, ownProps) => {
