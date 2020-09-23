@@ -43,7 +43,14 @@ class Search extends React.Component{
             videos.map(video =>
                 
                     <li key={video.id}>
-                        <VideoThumbnail video={video} account_id={account_id} idList={idList} />
+                    <VideoThumbnail
+                        video={video}
+                        account_id={account_id}
+                        idList={idList}
+                        list={this.props.list}
+                        createListItem={this.props.createListItem}
+                        deleteListItem={this.props.deleteListItem}
+                    />
                     </li>
                 
                 )
@@ -78,8 +85,11 @@ const mstp = (state, ownProps) => {
 };
 
 const mdtp = (dispatch) => ({
+    createListItem: listData => dispatch(createListItem(listData)),
+    deleteListItem: (listData) => dispatch(deleteListItem(listData)),
     fetchList: account_id => dispatch(fetchList(account_id)),
     fetchVideos: () => dispatch(fetchVideos()),
 })
 
 export default connect(mstp, mdtp)(Search)
+

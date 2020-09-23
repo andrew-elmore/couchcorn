@@ -1,9 +1,14 @@
 import * as listUtil from '../util/list'
 
 export const RECEIVE_LIST = 'RECEIVE_LIST';
+export const REMOVE_LIST = 'REMOVE_LIST';
 
 const receivelist = list => ({
     type: RECEIVE_LIST,
+    list,
+});
+const removeList = list => ({
+    type: REMOVE_LIST,
     list,
 });
 
@@ -29,7 +34,7 @@ export const deleteListItem = (listData) => dispatch => {
     console.log('deleteListItem')
     return (
         listUtil.deleteListItem(listData)
-            .then(list => dispatch(receivelist(list)))
+            .then(list => dispatch(removeList(list)))
     )
 }
 

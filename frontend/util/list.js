@@ -8,7 +8,7 @@ export const createListItem = (listData) => {
 
 export const deleteListItem = (listData) => {
     return $.ajax({
-        url: '/api/lists',
+        url: `/api/lists/${listData.account_id}`,
         method: 'DELETE',
         data: { listData }
     });

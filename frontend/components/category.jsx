@@ -86,7 +86,6 @@ class Category extends React.Component {
 
 
 const mstp = (state, ownProps) => {
-    debugger
     return ({
         list: state.list,
         account_id: state.session.currentAccount.id,
@@ -96,6 +95,7 @@ const mstp = (state, ownProps) => {
 
 const mdtp = (dispatch) => ({
     createListItem: listData => dispatch(createListItem(listData)),
+    deleteListItem: (listData) => dispatch(deleteListItem(listData)),
     fetchList: account_id => dispatch(fetchList(account_id)),
     fetchCategories: () => dispatch(fetchCategories()),
 })

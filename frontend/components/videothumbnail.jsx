@@ -6,13 +6,12 @@ import { Link } from 'react-router-dom';
 
 
 export const VideoThumbnail = props => {
-    debugger
     let onList = props.idList.includes(props.video.id)
         if(onList){
             return (
                 <div className='video-thumbnail'>
                     <div className="button">
-                        <button onClick={() => props.deleteListItem(props.video.id, props.account_id, props.list)}>-</button>
+                        <button onClick={() => props.deleteListItem({ video_id: props.video.id, account_id: props.account_id })}>-</button>
                     </div>
                     <Link to={`/videos/${props.video.id}`}>
                         <p>{props.video.title}</p>
