@@ -7,8 +7,10 @@ class Api::ListsController < ApplicationController
   end
   
   def destroy
-    @account_item = List.find(params[:id])
+    @account_item = List.find_by(account_id: params[:listData][:account_id], video_id: params[:listData][:video_id])
     @account_item.destroy
+    @account = Account.find(params[:id])
+    render :show
   end
 
     def show
