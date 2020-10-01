@@ -37,7 +37,32 @@ class Home extends React.Component {
         }
     }
 
+    dropBar() {
 
+        return(
+            <div className="dropbar-anchor">
+
+
+                <Link to={`/mylist`}>My List</Link>
+
+                <div className="logout">
+                    <button onClick={this.handleLogout}>Logout</button>
+                </div>
+            </div>
+        )
+    }
+
+    searchZone(){
+        return(
+            <div className="search-bar-anchor">
+                <div className='search-bar'>
+                    <form>
+                        <input type="text" onChange={this.handleChange} value={this.state.searchValue} />
+                    </form>
+                </div>
+            </div>
+        )
+    }
 
 
     render () {
@@ -47,18 +72,8 @@ class Home extends React.Component {
                 <div className="home">
                     <Link to={`/`}>COUCHCORN</Link>
                 </div>
-
-                <div className='search-bar'>
-                    <form>
-                        <input type="text" onChange={this.handleChange} value={this.state.searchValue}/>
-                    </form>
-                </div>
-
-                <Link to={`/mylist`}>My List</Link>
-
-                <div className="logout">
-                    <button onClick={this.handleLogout}>Logout</button>
-                </div>
+                {this.searchZone()}
+                {this.dropBar()}
             </div>
         )
     }

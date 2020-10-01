@@ -5,11 +5,18 @@ import { fetchVideo } from '../actions/video';
 
 
 class Video extends React.Component {
-
+    constructor(props) {
+        super(props);
+        this.goBack = this.goBack.bind(this); 
+    }
     
     componentDidMount() {
         
         this.props.fetchVideo(this.props.match.params.videoId)
+    }
+
+    goBack() {
+        this.props.history.goBack();
     }
 
     render() {
@@ -19,7 +26,10 @@ class Video extends React.Component {
         }
         return (
             <div className="videoplayer">
-                <h1>{video.title}</h1>
+                <h1>
+                    <button onClick={this.goBack}>Go Back</button>
+                    {video.title}
+                </h1>
                 <video src={video.videourl} controls></video>
             </div>
         )

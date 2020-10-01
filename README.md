@@ -42,13 +42,7 @@ Once a user clicks on a video they will be taken the viewer for that video. They
 
 ![video](/app/assets/images/video.png)
 
-## Future Development Ideas
 
-- Allow users to have their own custom list which will appear as the last category on the homepage. 
-- Each account will have at least one, and can have up to five users.
-- Include a search feature which will allow users to search for a video by name.
-- Include a seperate page for each category which can be accessed by clicking on the category name.
-    
 
 
     
