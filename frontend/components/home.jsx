@@ -12,7 +12,8 @@ class Home extends React.Component {
         this.handleLogout = this.handleLogout.bind(this);
         this.state = {
             video: {},
-            searchValue: ""
+            searchValue: "",
+            pannelHidden: true
         }
         this.handleChange = this.handleChange.bind(this)
     }
@@ -38,18 +39,21 @@ class Home extends React.Component {
     }
 
     dropBar() {
-
-        return(
-            <div className="dropbar-anchor">
-
-
-                <Link to={`/mylist`}>My List</Link>
-
-                <div className="logout">
-                    <button onClick={this.handleLogout}>Logout</button>
+        if (this.state.pannelHidden){
+            return(
+               null
+            )
+        } else {
+            return (
+                <div>
+                    <div className="dropbar" onMouseLeave={() => this.pannelHiddenTrueFalse(this.state)}>
+                        <div className="logout">
+                            <button onClick={this.handleLogout}>Logout</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        )
+            )
+        }
     }
 
     searchZone(){
@@ -64,6 +68,13 @@ class Home extends React.Component {
         )
     }
 
+    pannelHiddenTrueFalse(state){
+        debugger
+        let trueFasle = !state.pannelHidden
+        console.log("test1")
+        this.setState({pannelHidden: trueFasle})
+    }
+
 
     render () {
         
@@ -71,9 +82,12 @@ class Home extends React.Component {
             <div className="topbar">
                 <div className="home">
                     <Link to={`/`}>COUCHCORN</Link>
+                    <Link to={`/mylist`}>My List</Link>
                 </div>
                 {this.searchZone()}
-                {this.dropBar()}
+                <div className="dropbar-anchor" onMouseEnter={() => this.pannelHiddenTrueFalse(this.state)} >
+                    {this.dropBar()}
+                </div>
             </div>
         )
     }
