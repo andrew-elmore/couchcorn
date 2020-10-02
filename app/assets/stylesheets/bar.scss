@@ -29,13 +29,13 @@
 
 
 .topbar a {
-    text-decoration: none;
-    color: rgb(229, 9, 20);
-    font-size: 20px;
-    font-weight: bold;
-    position: absolute;
-    top: 20px;
-    left: 10px;
+    text-decoration: inherit;
+    color:inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    position: inherit;
+    top: inherit;
+    left: inherit;
 }
 
 .topbar button{
@@ -59,7 +59,40 @@
 .search-bar-anchor{
     position: absolute;
     right: 120px;
-    top: 25px;
+    top: 2.5px;
     color: white;
     cursor: pointer;
+    font-size: 50px;
 }
+
+
+.search-bar-anchor input{
+    position: absolute;
+    right: 0px;
+    top: 23px;
+    background-color: #313131;
+    color: white;
+
+}
+
+.my-home-link {
+    text-decoration: none;
+    color: rgb(229, 9, 20);
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.my-list-link {
+    text-decoration: none;
+    color:white;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    left: 95px;
+    width: 170px;
+}
+
+

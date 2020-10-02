@@ -61,7 +61,7 @@ class Home extends React.Component {
     searchZone(){
         if(this.state.searchHidden){
             return(
-                <div className="search-bar-anchor" onClick={() => this.searchHiddenTrueFalse(this.state)}>&#128269;</div>
+                <div className="search-bar-anchor" onClick={() => this.searchHiddenTrueFalse(this.state)}>&#8981;</div>
             )
         } else {
         return(
@@ -80,9 +80,9 @@ class Home extends React.Component {
         let trueFasle = !state.pannelHidden
         this.setState({pannelHidden: trueFasle})
     }
-    searchHiddenTrueFalse(state){
-        let trueFasle = !state.searchHidden
-        this.setState({searchHidden: trueFasle})
+    searchHiddenTrueFalse(state){ 
+        // let trueFasle = !state.searchHidden
+        this.setState({searchHidden: false})
     }
 
 
@@ -91,8 +91,12 @@ class Home extends React.Component {
         return (
             <div className="topbar">
                 <div className="home">
-                    <Link to={`/`}>COUCHCORN</Link>
-                    <Link to={`/mylist`}>My List</Link>
+                    <div className="my-home-link">
+                        <Link to={`/`} >COUCHCORN</Link>
+                    </div>
+                    <div className="my-list-link">
+                        <Link to={`/mylist`} >My List</Link>
+                    </div>
                 </div>
                 {this.searchZone()}
                 <div className="dropbar-anchor" onMouseEnter={() => this.pannelHiddenTrueFalse(this.state)} >
