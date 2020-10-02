@@ -34,7 +34,7 @@
     font-size: 20px;
     font-weight: bold;
     position: absolute;
-    top: 10px;
+    top: 20px;
     left: 10px;
 }
 
@@ -54,4 +54,12 @@
     right: 0px;
     height: 250px;
     z-index: 12;
+}
+
+.search-bar-anchor{
+    position: absolute;
+    right: 120px;
+    top: 25px;
+    color: white;
+    cursor: pointer;
 }

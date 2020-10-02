@@ -13,7 +13,9 @@ class Home extends React.Component {
         this.state = {
             video: {},
             searchValue: "",
-            pannelHidden: true
+            pannelHidden: true,
+            searchHidden: true,
+            user: null
         }
         this.handleChange = this.handleChange.bind(this)
     }
@@ -57,22 +59,30 @@ class Home extends React.Component {
     }
 
     searchZone(){
+        if(this.state.searchHidden){
+            return(
+                <div className="search-bar-anchor" onClick={() => this.searchHiddenTrueFalse(this.state)}>&#128269;</div>
+            )
+        } else {
         return(
-            <div className="search-bar-anchor">
-                <div className='search-bar'>
-                    <form>
-                        <input type="text" onChange={this.handleChange} value={this.state.searchValue} />
-                    </form>
+                <div className="search-bar-anchor" onClick={() => this.searchHiddenTrueFalse(this.state)}>
+                    <div className='search-bar'>
+                        <form>
+                            <input type="text" onChange={this.handleChange} value={this.state.searchValue} />
+                        </form>
+                    </div>
                 </div>
-            </div>
-        )
+            )
+        }
     }
 
     pannelHiddenTrueFalse(state){
-        debugger
         let trueFasle = !state.pannelHidden
-        console.log("test1")
         this.setState({pannelHidden: trueFasle})
+    }
+    searchHiddenTrueFalse(state){
+        let trueFasle = !state.searchHidden
+        this.setState({searchHidden: trueFasle})
     }
 
 
