@@ -6,7 +6,6 @@ export default (state = {}, action) => {
         case RECEIVE_LIST:
             return Object.assign({}, state,  Object.values(action.list) );
         case REMOVE_LIST:
-            console.log('remove list worked')
             let newState = {}
             return Object.assign({}, newState,  Object.values(action.list) );
         default:

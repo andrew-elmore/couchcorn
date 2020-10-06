@@ -8,7 +8,6 @@ const receiveCategories = categories => ({
 });
 
 export const fetchCategories = () => dispatch => {
-    console.log('category')
     return (
         utilCategories.fetchCategories()
             .then(categories => dispatch(receiveCategories(categories))))

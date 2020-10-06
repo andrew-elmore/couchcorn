@@ -34,7 +34,10 @@ class Search extends React.Component{
         let idList = this.props.list.map(video => video.id)
         if (this.props.videos.length != 0) {
             this.props.videos.forEach(video => {
-                if (video.title.slice(0, searchValue.length - 1).toLowerCase() === searchValue.slice(1, searchValue.length).toLowerCase()){
+                
+                let currentSearchVal = searchValue.slice(1, searchValue.length).toLowerCase()
+                let title = video.title.toLowerCase()
+                if (title.search(currentSearchVal) != -1){
                     videos.push(video)
             }
         })
