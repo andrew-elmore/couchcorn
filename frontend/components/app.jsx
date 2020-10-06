@@ -9,6 +9,7 @@ import LandingPage from './landingpage'
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import {Switch} from 'react-router-dom'
 import mylist from './mylist';
+import About from './about'
 
 export default () => (
   <div>
@@ -18,6 +19,8 @@ export default () => (
       <ProtectedRoute path='/videos/:videoId' component={VideoContainer} />
       <ProtectedRoute exact path='/videos' component={CategoryContainer} />
       <ProtectedRoute exact path='/search' component={Search} />
+      <ProtectedRoute exact path='/about' component={About} />
+
     </Switch>
     <Switch>
       <AuthRoute exact path="/" component={LandingPage} />

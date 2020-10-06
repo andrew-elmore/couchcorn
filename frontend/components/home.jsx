@@ -97,6 +97,9 @@ class Home extends React.Component {
                     <div className="my-list-link">
                         <Link to={`/mylist`} >My List</Link>
                     </div>
+                    <div className="about-me-link">
+                        <Link to={'/about'} > About Me</Link>
+                    </div>
                 </div>
                 {this.searchZone()}
                 <div className="dropbar-anchor" onMouseEnter={() => this.pannelHiddenTrueFalse(this.state)} >
