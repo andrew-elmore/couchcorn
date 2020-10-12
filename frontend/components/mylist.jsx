@@ -23,7 +23,7 @@ class myList extends React.Component{
         let videos = []
         if (this.props.list.length === 0){
             return(
-                <div>Finding Videos</div>
+                <div>No Videos Saved To List</div>
             )
         }else{  
             videos = this.props.list

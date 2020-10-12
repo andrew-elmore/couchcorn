@@ -34,5 +34,4 @@ export const VideoThumbnail = props => {
     }
 }
 
-
 export default VideoThumbnail
