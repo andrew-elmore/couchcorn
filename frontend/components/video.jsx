@@ -27,7 +27,7 @@ class Video extends React.Component {
         return (
             <div className="videoplayer">
                 <h1>
-                    <button onClick={this.goBack}>Go Back</button>
+                    <button onClick={this.goBack}>⇐</button>
                     {video.title}
                 </h1>
                 <video src={video.videourl} controls></video>
