@@ -42,6 +42,7 @@ class Home extends React.Component {
 
     dropBar() {
         if (this.state.pannelHidden){
+        // if (false){
             return(
                null
             )
@@ -49,7 +50,13 @@ class Home extends React.Component {
             return (
                 <div>
                     <div className="dropbar" onMouseLeave={() => this.pannelHiddenTrueFalse(this.state)}>
-                        <div className="logout">
+                        <div className="dropbar-my-list-link">
+                            <Link to={`/mylist`} >My List</Link>
+                        </div>
+                        <div className="dropbar-about-me-link">
+                            <Link to={'/about'} > About Me</Link>
+                        </div>
+                        <div className="dropbar-logout">
                             <button onClick={this.handleLogout}>Logout</button>
                         </div>
                     </div>
@@ -81,7 +88,6 @@ class Home extends React.Component {
         this.setState({pannelHidden: trueFasle})
     }
     searchHiddenTrueFalse(state){ 
-        // let trueFasle = !state.searchHidden
         this.setState({searchHidden: false})
     }
 
@@ -102,7 +108,7 @@ class Home extends React.Component {
                     </div>
                 </div>
                 {this.searchZone()}
-                <div className="dropbar-anchor" onMouseEnter={() => this.pannelHiddenTrueFalse(this.state)} >
+                <div className="dropbar-anchor" onMouseEnter={() => this.pannelHiddenTrueFalse(this.state)} > C
                     {this.dropBar()}
                 </div>
             </div>
