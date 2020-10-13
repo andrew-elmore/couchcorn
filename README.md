@@ -6,13 +6,13 @@
    
 ## Sign In and Sign Up
 
-   A user can easily sign in by entering the demo user email **name@website.com** and the demo password **password** and pressing the **Log In!** button. 
+When a user arrives on to the site they can either login or sign up. To login a user must press the login button and enter their credentials, or press the demo login button. Once logged in their session is saved with a session token in thier cookies. 
 
-   ![login](/app/assets/images/login.png)
+If a user wishes to create an account they must enter thier email and click **TRY FREE FOR 30 DAYS**. This email address will be passed to the sign up container through the params. There it will be pre-filled in the sign up input. 
 
-   A user can also create their own account by pressing the **Sign up now** link. They will then be taken to the sign up page where they can enter a new email address and password and pressing **CONTINUE**. They will then be signed in and brought to the home page. If a user already has an account, they can click the **Sign In** link at the upper right hand corner of the page and be brought back to the sign in page.
-
-   ![signup](/app/assets/images/signup.png)
+```
+   <Link to={{pathname: `/signup`, state: {test: this.state.account_email}}} >TRY FREE FOR 30 DAYS</Link>
+```
 
 ## Homepage and Categories
 
