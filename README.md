@@ -16,33 +16,46 @@
 
 ## Homepage and Categories
 
-Each video is assigned to one or more categories based on the subject of the video to allow users to easily find the video which interests them most. Clicking on a video takes the user to view that video. A user can also logout by pressing the logout button on the upper right hand corner of the page. 
+Each video is assigned to one or more categories based on the subject of the video to allow users to easily find the video which interests them most. Clicking on a video takes the user to view that video. If a category has more than 6 videos use the buttons on either side to scroll. 
 
 ![homepage](/app/assets/images/homepage.png)
 
 
-Each thumbnail is its own independent item component. This was done to make upcoming features such as a individual page for each category easier to execute. 
+## Video Thumbnails
+
+A thumbnail is an independent component, this was done to allow a uniform appearance in each feature where a thumbnail is required. This also allows for easy implementation of new features or refactoring of existing features.
 
 ```
-    const VideoThumbnail = props => {
-        return (
-            <div className='video'>
-                <Link to={`/videos/${props.video.id}`}>
-                    <p>{props.video.title}</p>
-                    <img src={props.video.thumbnailurl}/>
-                </Link>
-            </div>
-        )
-    }
+    <div className='video-thumbnail'>
+        <div className="button">
+            <button onClick={() => props.createListItem({video_id: props.video.id, account_id: props.account_id})}>+</button>
+        </div>
+        <Link to={`/videos/${props.video.id}`}>
+            <p>{props.video.title}</p>
+            <img src={props.video.thumbnailurl}/>
+        </Link>
+    </div>
 ```
 
-## Video
 
-Once a user clicks on a video they will be taken the viewer for that video. They are able to watch the videohere and can return to the homepage by clicking the **COUCHCORN** logo at the top left corner. They can alsolog out by pressing the **Logout** button at the top right hand corner. 
+## Search
 
-![video](/app/assets/images/video.png)
-
+A user can search for videos by title by pressing the eyeglass icon on the top bar and typing in a part or all of the title. The search function fetches all videos from the database and stores them in the redux store. The videos are then filtered on the frontend. 
 
 
+```
+    let videos = []
+    let searchValue = this.state.searchValue
+    let idList = this.props.list.map(video => video.id)
+    if (this.props.videos.length != 0) {
+        this.props.videos.forEach(video => {
+            let currentSearchVal = searchValue.slice(1, searchValue.length).toLowerCase()
+            let title = video.title.toLowerCase()
+            if (title.search(currentSearchVal) != -1){
+                videos.push(video)
+        }
+    })
+```
 
-    
+## My List
+
