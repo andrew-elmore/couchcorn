@@ -10,11 +10,11 @@ When a user arrives on to the site they can either login or sign up. To login a 
 
 If a user wishes to create an account they must enter thier email and click **TRY FREE FOR 30 DAYS**. This email address will be passed to the sign up container as props. There it will be pre-filled in the sign up input. 
 
-```
+```javascript
    <Link to={{pathname: `/signup`, state: {test: this.state.account_email}}} >TRY FREE FOR 30 DAYS</Link>
 ```
 
-```
+```javascript
   this.state = {
       account_email: props.location.state.account_email,
       password: ''
@@ -39,7 +39,7 @@ Each video is assigned to one or more categories based on the subject of the vid
 
 A thumbnail is an independent component, this was done to allow a uniform appearance in each feature where a thumbnail is required. This also allows for easy implementation of new features or refactoring of existing features.
 
-```
+```javascript
     <div className='video-thumbnail'>
         <div className="button">
             <button onClick={() => props.createListItem({video_id: props.video.id, account_id: props.account_id})}>+</button>
@@ -59,7 +59,7 @@ A thumbnail is an independent component, this was done to allow a uniform appear
 A user can search for videos by title by pressing the eyeglass icon on the top bar and typing in a part or all of the title. The search function fetches all videos from the database and stores them in the redux store. The videos are then filtered on the frontend. 
 
 
-```
+```javascript
     let videos = []
     let searchValue = this.state.searchValue
     let idList = this.props.list.map(video => video.id)
@@ -82,7 +82,7 @@ A user can search for videos by title by pressing the eyeglass icon on the top b
 
 A user can add multiple videos to a custom list by pressing the plus sign in the upper left hand corner of a video's thumbnail. Each thumbnail has the add/remove list function passed in as props. If a video is on the user's list, the add/remove button will appear as a minus sign on all instances of that video's thumbnail. once a user's thumbnail. This is acheived by passing the user's list into each thumbnail. 
 
-```
+```javascript
 let onList = props.idList.includes(props.video.id)
 if (onList) {
     return (
