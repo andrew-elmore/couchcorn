@@ -8,10 +8,17 @@
 
 When a user arrives on to the site they can either login or sign up. To login a user must press the login button and enter their credentials, or press the demo login button. Once logged in their session is saved with a session token in thier cookies. 
 
-If a user wishes to create an account they must enter thier email and click **TRY FREE FOR 30 DAYS**. This email address will be passed to the sign up container through the params. There it will be pre-filled in the sign up input. 
+If a user wishes to create an account they must enter thier email and click **TRY FREE FOR 30 DAYS**. This email address will be passed to the sign up container as props. There it will be pre-filled in the sign up input. 
 
 ```
    <Link to={{pathname: `/signup`, state: {test: this.state.account_email}}} >TRY FREE FOR 30 DAYS</Link>
+```
+
+```
+  this.state = {
+      account_email: props.location.state.account_email,
+      password: ''
+  };
 ```
 
 ## Homepage and Categories
