@@ -66,9 +66,11 @@ A user can search for videos by title by pressing the eyeglass icon on the top b
     })
 ```
 
-![homepage](/app/assets/images/homepage.png)
+![search](/app/assets/images/Search.gif)
 
 ## My List
 
 A user can add multiple videos to a custom list by pressing the plus sign in the upper left hand corner of a video's thumbnail. Each thumbnail has the add/remove list function passed in as props. If a video is on the user's list, the add/remove button will appear as a minus sign on all instances of that video's thumbnail. once a user's thumbnail. This is acheived by passing the user's list into the 
 
+
+![list](/app/assets/images/List.gif)
