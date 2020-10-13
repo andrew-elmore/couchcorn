@@ -21,11 +21,13 @@ If a user wishes to create an account they must enter thier email and click **TR
   };
 ```
 
+![signup](/app/assets/images/signup.gif)
+
 ## Homepage and Categories
 
 Each video is assigned to one or more categories based on the subject of the video to allow users to easily find the video which interests them most. Clicking on a video takes the user to view that video. If a category has more than 6 videos use the buttons on either side to scroll. 
 
-![homepage](/app/assets/images/homepage.png)
+![scroll](/app/assets/images/Scroll.gif)
 
 
 ## Video Thumbnails
@@ -64,5 +66,9 @@ A user can search for videos by title by pressing the eyeglass icon on the top b
     })
 ```
 
+![homepage](/app/assets/images/homepage.png)
+
 ## My List
+
+A user can add multiple videos to a custom list by pressing the plus sign in the upper left hand corner of a video's thumbnail. Each thumbnail has the add/remove list function passed in as props. If a video is on the user's list, the add/remove button will appear as a minus sign on all instances of that video's thumbnail. once a user's thumbnail. This is acheived by passing the user's list into the 
 
